@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Login from "./Login";
-import Browser from "./Browser";
+import Login from "./Login/Login";
+import Browser from "./Browse/Browser";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
@@ -9,6 +9,7 @@ import { adduser, removeuser } from "../Utils/UserSlice";
 
 const Body = () => {
   const dispatch = useDispatch();
+
   const appRouter = createBrowserRouter([
     {
       path: "/",

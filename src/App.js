@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import "./App.css";
+import "./App.scss";
 import Body from "./Components/Body";
 //@ts-ignore
 import appstore from "./Utils/appstore";

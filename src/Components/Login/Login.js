@@ -1,16 +1,17 @@
 import React, { useRef, useState } from "react";
-import { ImageLinks } from "../Images/ImageLinks";
-import Header from "./Header";
-import { Formvalidation } from "../Utils/Validation";
+import { ImageLinks } from "../../Images/ImageLinks";
+import Header from "../Header/Header";
+import { Formvalidation } from "../../Utils/Validation";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../Utils/Firebase";
+import { auth } from "../../Utils/Firebase";
 import { useNavigate } from "react-router-dom";
-import { adduser } from "../Utils/UserSlice";
+import { adduser } from "../../Utils/UserSlice";
 import { useDispatch } from "react-redux";
+import "./Login.scss";
 
 const Login = () => {
   const email = useRef(null);
@@ -24,6 +25,7 @@ const Login = () => {
   const togglebutton = () => {
     setissignin(!issignin);
   };
+
   const onsubmit = () => {
     const message = Formvalidation(
       email.current.value || "",
@@ -87,56 +89,37 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <Header />
-      <div className="absolute w-full h-screen">
-        <img
-          src={ImageLinks.Banner}
-          alt="banner"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+    <div className="login-page-container">
+      <div className="left-section">
+        <Header />
       </div>
-
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-12 bg-black bg-opacity-80 my-36 mx-auto right-0 left-0 text-white rounded-xl"
-      >
-        <h1 className="text-3xl font-bold py-4">
-          {issignin ? "Sign In" : "Sign Up"}
-        </h1>
-        {!issignin && (
-          <input
-            ref={name}
-            type="text"
-            placeholder="Enter Name"
-            className="p-2 my-2 w-full bg-gray-700 rounded-lg"
-          />
-        )}
-
-        <input
-          ref={email}
-          type="email"
-          placeholder="Enter Email"
-          className="p-2 my-2 w-full bg-gray-700 rounded-lg"
-        />
-        <input
-          ref={password}
-          type="password"
-          placeholder="Password"
-          className="p-2 my-2 w-full bg-gray-700 rounded-lg"
-        />
-        <p className="font-semibold text-red-500 ">{errormessage}</p>
-        <button
-          onClick={onsubmit}
-          className=" p-2 my-4 w-full bg-red-700 rounded-lg"
-        >
-          {issignin ? "Sign In" : "Sign Up"}
-        </button>
-        <p className="font-bold cursor-pointer " onClick={togglebutton}>
-          {issignin ? "New to Filmiflixx? Sign up" : "Already member? Sign in"}
-        </p>
-      </form>
+      <div className="right-section">
+        {/* <img
+          src={ImageLinks.cartoon1}
+          alt="no image"
+          className="cartoon"
+          style={{ width: "35%", height: "25%" }}
+        ></img> */}
+        <div className="form-container">
+          <form onSubmit={(e) => e.preventDefault()} className="login-form">
+            <h1>{issignin ? "Sign In" : "Sign Up"}</h1>
+            {!issignin && (
+              <input ref={name} type="text" placeholder="Enter Name" />
+            )}
+            <input ref={email} type="email" placeholder="Enter Email" />
+            <input ref={password} type="password" placeholder="Password" />
+            <p className="error-message">{errormessage}</p>
+            <button onClick={onsubmit} className="login-button">
+              {issignin ? "Sign In" : "Sign Up"}
+            </button>
+            <p className="signup-page-toogle" onClick={togglebutton}>
+              {issignin
+                ? "New to Filmiflixx? Sign up"
+                : "Already member? Sign in"}
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
