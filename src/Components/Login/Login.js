@@ -54,7 +54,6 @@ const Login = () => {
               dispatch(
                 adduser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
