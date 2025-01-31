@@ -1,0 +1,55 @@
+.details-page {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to bottom, rgb(0, 81, 135), transparent);
+  position: relative;
+}
+.conatiners {
+  background-color: black;
+  width: 70%;
+  min-height: 1000px;
+  border-radius: 20px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.cover-overlay {
+  width: 70%;
+  height: 380px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  border-radius: 20px;
+  background: linear-gradient(to right, black, transparent);
+}
+.detail-movie-cards {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+}
+.details-box-1 {
+  width: 700px;
+  height: fit-content;
+  position: absolute;
+  top: 20%;
+  left: 135%;
+  color: white;
+}
+.details-midddle-box {
+  position: absolute;
+  top: 75%;
+  left: 135%;
+}
+.details-box-2 {
+  width: 1000px;
+  height: fit-content;
+  position: absolute;
+  // top: 70%;
+  margin-top: 20px;
+  left: 10%;
+  color: white;
+}
+.movie-detail-title {
+  font-size: 50px;
+  font-family: sans-serif;
+}

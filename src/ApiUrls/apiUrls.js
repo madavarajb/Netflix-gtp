@@ -9,8 +9,13 @@ export const options = {
 
 export const API = {
   getNowPlayingMovies: "https://api.themoviedb.org/3/movie/now_playing?page=1",
-  getTrendingMovies: "https://api.themoviedb.org/3/movie/popular?page=1",
+  getTrendingMovies: " https://api.themoviedb.org/3/movie/top_rated?page=1",
   getVideos: "https://api.themoviedb.org/3/movie/939243/videos?language=en-US",
+  getUpcommingMovies: "https://api.themoviedb.org/3/movie/upcoming?page=1",
   getVideoss: (movieId) =>
     `https://api.themoviedb.org/3/movie/${movieId}/videos`,
+  //811941
+  // getMovieDetails: `https://api.themoviedb.org/3/movie/1249289?language=en-US`,
+  getMovieDetails: (id) =>
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
 };

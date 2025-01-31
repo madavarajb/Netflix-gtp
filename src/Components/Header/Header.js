@@ -6,6 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../Utils/Firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { adduser, removeuser } from "../../Utils/UserSlice";
+import { Button, DropdownMenu, Grid } from "@radix-ui/themes";
+import {
+  DoubleArrowDownIcon,
+  ExitIcon,
+  HamburgerMenuIcon,
+} from "@radix-ui/react-icons";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -50,10 +56,47 @@ const Header = () => {
           </p>
         )}
         {user && (
-          <div className="sign-out">
-            <button onClick={handlesignout} className="sign-out-button">
-              Sign out
-            </button>
+          <div>
+            <div className="dropdown-area">
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger>
+                  <Button
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                    }}
+                  >
+                    <HamburgerMenuIcon width={30} height={30} />
+                  </Button>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content
+                  style={{
+                    width: "200px",
+                    height: "100%",
+                    color: "white",
+                    backgroundColor: "black",
+                  }}
+                >
+                  <DropdownMenu.Item>WatchList</DropdownMenu.Item>
+                  <DropdownMenu.Item>Favorites</DropdownMenu.Item>
+                  <DropdownMenu.Item>Comming Soon</DropdownMenu.Item>
+
+                  <DropdownMenu.Separator />
+                  <DropdownMenu.Item
+                    shortcut={<ExitIcon color="white" />}
+                    onClick={handlesignout}
+                  >
+                    signout
+                  </DropdownMenu.Item>
+                </DropdownMenu.Content>
+              </DropdownMenu.Root>
+            </div>
+
+            {/* <div className="sign-out">
+              <button onClick={handlesignout} className="sign-out-button">
+                Sign out
+              </button>
+            </div> */}
           </div>
         )}
       </div>

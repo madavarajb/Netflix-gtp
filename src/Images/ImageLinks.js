@@ -7,4 +7,5 @@ export const ImageLinks = {
   cartoon1:
     "https://pngimg.com/uploads/madagascar_penguins/madagascar_penguins_PNG44.png",
   CDN_IMAGE_LINK: "https://image.tmdb.org/t/p/w200/",
+  CDN_IMAGE_LINK2: "https://image.tmdb.org/t/p/w500/",
 };

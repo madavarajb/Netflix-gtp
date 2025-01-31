@@ -1,6 +1,7 @@
 import Login from "./Login/Login";
 import Browser from "./Browse/Browser";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Details from "./Detailspage/Details";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -11,6 +12,10 @@ const Body = () => {
     {
       path: "/browse",
       element: <Browser />,
+    },
+    {
+      path: "/details/:id",
+      element: <Details />,
     },
   ]);
 

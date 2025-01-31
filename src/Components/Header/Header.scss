@@ -7,6 +7,7 @@
 
   &.browser-header {
     background-color: rgb(10, 30, 57);
+    transition: background-color 0.3s ease-in-out;
     width: 100%;
     height: 90px;
     display: flex;

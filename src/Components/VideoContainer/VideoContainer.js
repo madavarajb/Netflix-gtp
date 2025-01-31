@@ -8,13 +8,15 @@ const VideoContainer = ({ movieId }) => {
   useTrailerVideo(movieId);
   console.log("video===>", trailervideo);
   return (
-    <div className="video-main-container">
+    <div className="video-main-container" style={{ backgroundColor: "black" }}>
       <div className="video-content">
         <iframe
           style={{
-            width: "100vw",
-            aspectRatio: "16 / 9",
+            width: "100%",
+            height: "100%",
+            border: "none",
           }}
+          scrolling="no"
           src={
             "https://www.youtube.com/embed/" +
             trailervideo?.key +
