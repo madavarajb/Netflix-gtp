@@ -9,17 +9,25 @@ import {
   StarIcon,
 } from "@radix-ui/react-icons";
 import useMovieDetails from "../../Custom hooks/useMovieDetails";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ImageLinks } from "../../Images/ImageLinks";
+import Header from "../Header/Header";
+import { addMovies } from "../../Utils/WatchlistSlice";
 
 const Details = () => {
   const details = useSelector((store) => store?.movies?.movieDetails);
+  const dispatch = useDispatch();
   console.log("whats it===>", details);
 
   useMovieDetails(); //api call
 
+  const handlewatchlistbutton = (details) => {
+    dispatch(addMovies(details.poster_path));
+  };
+
   return (
     <div className="details-page">
+      {/* <Header /> */}
       <DetailHeader />
       <div className="conatiners"></div>
       <div className="movie-detail-container">
@@ -90,7 +98,13 @@ const Details = () => {
               size="3"
               variant="solid"
               color="orange"
-              style={{ width: "200px", height: "50px", fontSize: "20px" }}
+              style={{
+                width: "200px",
+                height: "50px",
+                fontSize: "20px",
+                cursor: "pointer",
+              }}
+              onClick={() => handlewatchlistbutton(details)}
             >
               <RocketIcon width={24} height={24} />
               WatchList

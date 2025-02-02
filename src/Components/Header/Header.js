@@ -18,6 +18,8 @@ const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const gtptogle = useSelector((store) => store?.gtp?.showGtp);
+  const id = useSelector((store) => store?.movies?.movieDetails?.id);
+  const watchlists = useSelector((store) => store?.watchlist?.movies);
   const dispatch = useDispatch();
 
   const handlesignout = () => {
@@ -30,6 +32,10 @@ const Header = () => {
       });
   };
 
+  const handelwatchlist = () => {
+    navigate("/watchlist");
+  };
+
   const Handelopagetoggle = () => {
     dispatch(togglegtp());
     console.log("===> clicked");
@@ -39,11 +45,23 @@ const Header = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
-        dispatch(adduser({ uid: uid, email: email, displayName: displayName }));
-        navigate("/browse");
+        dispatch(adduser({ uid, email, displayName }));
+
+        // Navigate only if the user is not already on the browse page
+        if (
+          window.location.pathname !== "/browse" &&
+          window.location.pathname !== "/watchlist" &&
+          window.location.pathname !== "/details"
+        ) {
+          navigate("/browse");
+        }
       } else {
         dispatch(removeuser());
-        navigate("/");
+
+        // Navigate only if the user is not already on the home page
+        if (window.location.pathname !== "/") {
+          navigate("/");
+        }
       }
     });
     return () => unsubscribe();
@@ -97,7 +115,9 @@ const Header = () => {
                       backgroundColor: "black",
                     }}
                   >
-                    <DropdownMenu.Item>WatchList</DropdownMenu.Item>
+                    <DropdownMenu.Item onClick={handelwatchlist}>
+                      WatchList({watchlists?.length})
+                    </DropdownMenu.Item>
                     <DropdownMenu.Item>Favorites</DropdownMenu.Item>
                     <DropdownMenu.Item>Comming Soon</DropdownMenu.Item>
 
