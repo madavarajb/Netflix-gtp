@@ -7,8 +7,7 @@ export const options = {
   },
 };
 
-export const openai_key =
-  "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";
+export const openai_key = "";
 export const API = {
   getNowPlayingMovies: "https://api.themoviedb.org/3/movie/now_playing?page=1",
   getTrendingMovies: " https://api.themoviedb.org/3/movie/top_rated?page=1",
