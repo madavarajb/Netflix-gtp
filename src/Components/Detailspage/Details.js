@@ -2,7 +2,12 @@ import React from "react";
 import "./Details.scss";
 import DetailHeader from "./DetailHeader";
 import { AspectRatio, Badge, Button, Flex, Separator } from "@radix-ui/themes";
-import { CheckIcon, RocketIcon } from "@radix-ui/react-icons";
+import {
+  CheckIcon,
+  RocketIcon,
+  StarFilledIcon,
+  StarIcon,
+} from "@radix-ui/react-icons";
 import useMovieDetails from "../../Custom hooks/useMovieDetails";
 import { useSelector } from "react-redux";
 import { ImageLinks } from "../../Images/ImageLinks";
@@ -102,6 +107,15 @@ const Details = () => {
             >
               <CheckIcon width={24} height={24} />
               Seen
+            </Button>
+            <Button
+              size="3"
+              variant="solid"
+              color="orange"
+              style={{ width: "200px", height: "50px", fontSize: "20px" }}
+            >
+              <StarIcon width={24} height={24} color="yellow" />
+              Favourites
             </Button>
           </Flex>
         </div>

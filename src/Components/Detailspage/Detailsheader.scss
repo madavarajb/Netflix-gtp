@@ -5,3 +5,20 @@
   position: fixed;
   z-index: 1;
 }
+.header-content {
+  display: flex;
+  position: absolute;
+}
+.back-button {
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.details-header-list {
+  color: white;
+  display: flex;
+  gap: 10px;
+}
