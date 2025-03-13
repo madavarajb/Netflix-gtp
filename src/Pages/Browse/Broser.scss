@@ -1,0 +1,39 @@
+.browser-main-container {
+  width: 100%;
+  height: 100vh;
+  // background-color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.boxx-1 {
+  // background-color: blue;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  z-index: 3;
+}
+.boxx-2 {
+  // background-color: yellow;
+  width: 100%;
+  height: 100vh;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-1 {
+  // background-color: black;
+  width: 100%;
+  height: 10%;
+}
+
+.inner-2 {
+  // background-color: purple;
+  width: 100%;
+  height: 100vh;
+  max-height: 92.5vh;
+  overflow-y: auto;
+  position: relative;
+}

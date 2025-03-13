@@ -1,0 +1,34 @@
+.list-box-container {
+  width: 80%;
+  height: 11vh;
+  border-radius: 10px;
+  background-color: rgb(37, 37, 37);
+  display: flex;
+}
+.poster-card {
+  width: 10%;
+  height: 90%;
+  background-color: black;
+  border-radius: 5px;
+  margin-left: 3%;
+  margin-top: 1%;
+}
+.list-box-header {
+  color: white;
+  padding: 10px;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.list-content-box {
+  width: 80%;
+  height: 80%;
+  //   background-color: black;
+  color: white;
+  margin-left: 3%;
+  margin-top: 2%;
+  //   padding-left: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //
+}

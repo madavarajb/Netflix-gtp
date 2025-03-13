@@ -8,14 +8,17 @@ const SecondaryContainer = () => {
   return (
     <div className="secondary-container">
       <div className="movie-cards-list">
-        <div style={{ margin: "10px" }}>
+        <div style={{}}>
           <MovieList
-            title={"Now Playing"}
+            title={"| Now Playing"}
             movies={movies.nowPlayingMovies || []}
           />
-          <MovieList title={"Top Rated"} movies={movies.trendingMovies || []} />
           <MovieList
-            title={"UpComming"}
+            title={"| Top Rated"}
+            movies={movies.trendingMovies || []}
+          />
+          <MovieList
+            title={"| UpComming"}
             movies={movies.UpCommingMovies || []}
           />
         </div>

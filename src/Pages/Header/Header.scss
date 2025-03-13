@@ -1,0 +1,52 @@
+.browser-header {
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-logo {
+  color: white;
+  font-family: Impact;
+  font-size: 30px;
+  padding: 10px 8%;
+}
+.avatar-icon-dropdown {
+  padding: 12px 10%;
+}
+
+//Header 2
+.browser-header-side {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.header-objects {
+  padding: 20px 10px 10px;
+  transform: translateY(30%); //if margin is not working as expectyed
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.button-styles {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-styles:hover {
+  background-color: rgb(43, 41, 41);
+}

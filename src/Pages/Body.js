@@ -7,11 +7,11 @@ import Watchlist from "./Watchlist/Watchlist";
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
-      path: "/",
+      path: "/login",
       element: <Login />,
     },
     {
-      path: "/browse",
+      path: "/",
       element: <Browser />,
     },
     {

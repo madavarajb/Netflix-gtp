@@ -13,6 +13,7 @@ const useMovieDetails = () => {
     console.log("details--->", json);
     dispatch(addMovieDetails(json));
   };
+
   useEffect(() => {
     movieDetails();
   }, [id]);

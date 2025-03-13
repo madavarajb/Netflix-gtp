@@ -1,0 +1,32 @@
+.feature-container {
+  height: 50vh;
+  width: 95%;
+  margin-top: 2%;
+  padding-left: 3%;
+  // background-color: blue;
+}
+
+.feature-cover {
+  background-color: grey;
+  width: 97%;
+  border-radius: 30px;
+  height: 70%;
+  display: flex;
+  justify-items: stretch;
+  align-items: center;
+}
+
+.feature-poster {
+  margin-left: 5%;
+  width: 12%;
+  height: 80%;
+  // background-color: black;
+  border-radius: 10%;
+}
+
+.text-content {
+  padding: 50px;
+  color: white;
+  width: 70%;
+  // gap: 20px;
+}

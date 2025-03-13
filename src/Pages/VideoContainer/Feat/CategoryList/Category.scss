@@ -1,0 +1,13 @@
+.category-container {
+  height: 40vh;
+  width: 100%;
+  padding-left: 3%;
+}
+
+.box-row {
+  display: flex;
+  flex-direction: row; // Keep items in a single row
+  gap: 20px;
+  max-width: 165vh;
+  overflow-x: auto; // Allow horizontal scrolling
+}

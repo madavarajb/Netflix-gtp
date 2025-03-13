@@ -3,30 +3,33 @@
   overflow-x: scroll;
 }
 .cards {
-  width: 180px;
-  border-radius: 15px;
+  width: 190px;
+  border-radius: 20px;
   padding: 10px;
   transition: width 0.3s ease-in-out;
 }
-.cards:hover {
-  width: 200px;
-}
+// .cards:hover {
+//   width: 200px;
+// }
 .header-titles {
   color: white;
   padding: 10px;
-  font-size: 25px;
+  font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .movie-cards-list {
-  position: absolute;
-  top: 80%;
-  left: 0;
-  right: 0;
+  // position: absolute;
+  overflow-x: auto;
+  overflow-y: auto;
+  min-height: 100vh;
+  width: 100%;
 }
 .secondary-container {
-  background-color: black;
+  // background-color: green;
   width: 100%;
-  height: 140vh;
-  max-height: 140vh;
+  min-width: 80%;
+  min-height: 100vh;
+  height: auto;
   overflow-y: auto;
+  padding-left: 3%;
 }

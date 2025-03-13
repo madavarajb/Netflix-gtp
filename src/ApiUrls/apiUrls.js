@@ -13,6 +13,9 @@ export const API = {
   getTrendingMovies: " https://api.themoviedb.org/3/movie/top_rated?page=1",
   getVideos: "https://api.themoviedb.org/3/movie/939243/videos?language=en-US",
   getUpcommingMovies: "https://api.themoviedb.org/3/movie/upcoming?page=1",
+  getGenres: "https://api.themoviedb.org/3/genre/movie/list?language=en",
+  getPopularMovies:
+    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
   getVideoss: (movieId) =>
     `https://api.themoviedb.org/3/movie/${movieId}/videos`,
   getMovieDetails: (id) =>

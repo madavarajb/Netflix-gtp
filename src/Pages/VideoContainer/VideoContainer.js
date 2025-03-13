@@ -8,12 +8,12 @@ const VideoContainer = ({ movieId }) => {
   useTrailerVideo(movieId);
   console.log("video===>", trailervideo);
   return (
-    <div className="video-main-container" style={{ backgroundColor: "black" }}>
-      <div className="video-content">
+    <div className="video-main-container">
+      <div className="video-container">
         <iframe
           style={{
-            width: "100%",
-            height: "100%",
+            width: "95vw",
+            height: "90vh",
             border: "none",
           }}
           scrolling="no"
@@ -24,7 +24,7 @@ const VideoContainer = ({ movieId }) => {
           }
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
+          referrerPolicy="strict-origin-when-cross-origin"
         ></iframe>
       </div>
     </div>
